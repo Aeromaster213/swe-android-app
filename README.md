@@ -10,3 +10,4 @@ Locations come in many varieties:
 4. Overfishing
 5. Damaged coral reefs
 6. Shipwrecks
+7. Land reclamation projects

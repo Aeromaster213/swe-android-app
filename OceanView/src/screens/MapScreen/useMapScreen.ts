@@ -9,6 +9,7 @@ export const useMapScreen = () => {
     const mapRef = useRef<MapView>(null)
     const [userLocation, setUserLocation] = useState<UserLocationChangeEvent['nativeEvent']['coordinate']>()
     const [modelVisible, setModelVisible] = useState(false)
+    const [hamVisible, setHamVisible] = useState(false)
 
     useEffect(() => {
         if (userLocation) {
@@ -33,15 +34,26 @@ export const useMapScreen = () => {
     const closeDestinationModel = () => {
         setModelVisible(false)
     }
+
+    const handleHamburgerMenuPress = () => {
+        setHamVisible(true)
+    }
+
+    const closeHamMenu = () => {
+        setHamVisible(false)
+    }
     return {
         models: {
             mapRef,
-            modelVisible
+            modelVisible,
+            hamVisible,
         },
         operations: {
             handleUserLocationChange,
             handleMapSearchBarPress,
-            closeDestinationModel
+            closeDestinationModel,
+            handleHamburgerMenuPress,
+            closeHamMenu,
         }
     }
 }
