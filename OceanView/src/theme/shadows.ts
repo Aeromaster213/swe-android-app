@@ -1,6 +1,5 @@
 import { scale } from "react-native-size-matters";
 import type { Theme } from '@emotion/react'
-import { theme } from "./theme";
 
 export const shadows = {
     primary: (theme: Theme) => {

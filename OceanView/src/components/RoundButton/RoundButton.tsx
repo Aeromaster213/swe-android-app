@@ -6,12 +6,14 @@ import { scale } from 'react-native-size-matters';
 
 interface RoundButtonProps {
     icon: 'ios-menu-outline' | 'arrow-back-outline';
-    onPress?: () => void
+    onPress: () => void
 }
 
-export const RoundButton = ({icon, onPress}: RoundButtonProps) => {
+export const RoundButton = ({ icon, onPress }: RoundButtonProps) => {
     const insets = useSafeAreaInsets()
-    return <StyledPressable insets={insets} onPress={onPress} >
-        <Icon name={icon} size={scale(27)} />
-    </StyledPressable>
+    return (
+        <StyledPressable insets={insets} onPress={onPress} >
+            <Icon name={icon} size={scale(27)} color={'black'} />
+        </StyledPressable>
+    )
 }

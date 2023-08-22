@@ -1,30 +1,34 @@
 import React from 'react'
-import { Modal } from 'react-native'
+import { Modal, TouchableWithoutFeedback, View } from 'react-native'
 import { RoundButton } from '../RoundButton'
 import { StyledFlatlist } from './DestinationModel.styles'
 import { FlatlistHeader } from './components/FlatlistHeader'
 
 interface DestinationModelProps {
-    visible: boolean,
-    closeModel: () => void,
+    visible: boolean;
+    closeModel: () => void
 }
 
 export const DestinationModel = ({ visible, closeModel }: DestinationModelProps) => {
+
     const renderFlatlistItem = () => {
         return null
     }
-    const handleButtonPress = () => {
-        console.log('Button Pressed');
+
+    const handleOnPress = () => {
+        console.log("onPress");
         closeModel();
     }
+
     return (
-        <Modal onRequestClose={handleButtonPress} visible={visible} animationType='fade'>
-            <RoundButton icon="arrow-back-outline" onPress={handleButtonPress} />
+        <Modal onRequestClose={handleOnPress} visible={visible} animationType='fade'>
             <StyledFlatlist
                 data={[]}
-                renderItem={renderFlatlistItem} 
+                renderItem={renderFlatlistItem}
                 ListHeaderComponent={FlatlistHeader}
             />
+            <RoundButton icon="arrow-back-outline" onPress={handleOnPress} />
+
         </Modal >
     )
 }

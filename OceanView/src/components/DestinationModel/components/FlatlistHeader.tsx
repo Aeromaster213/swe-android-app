@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, HorizontalContainer } from './FlatlistHeader.styles'
+import { Circle, Container, DecoratorCircle, HorizontalContainer, InputsContainer } from './FlatlistHeader.styles'
 import { DestinationInput } from '../../DestinationInput/DestinationInput'
 import { Spacer } from '../../common/Spacer'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -10,14 +10,17 @@ export const FlatlistHeader = () => {
 
     return (
         <Container>
-            <Spacer height={insets.top + scale(60)} />
+            <Spacer height={insets.top + scale(80)} />
             <HorizontalContainer>
-                <Container>
-                    <DestinationInput 
-                    disabled 
-                    placeholder='Enter Location' />
-                    <DestinationInput />
-                </Container>
+                <DecoratorCircle>
+                    <Circle />
+                </DecoratorCircle>
+                <Spacer width={scale(10)} />
+                <InputsContainer>
+                    <DestinationInput
+                        placeholder='Enter Location'
+                    />
+                </InputsContainer>
             </HorizontalContainer>
         </Container>
     )

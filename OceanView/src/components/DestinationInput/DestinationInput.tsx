@@ -1,5 +1,6 @@
 import React from 'react'
 import { DisabledInput, Input } from './DestinationInput.styles'
+import { theme } from '../../theme/theme'
 
 interface DestinationInputProps {
     disabled?: boolean,
@@ -13,8 +14,8 @@ export const DestinationInput = ({
     autofocus
 }: DestinationInputProps) => {
 
-    const sharedProps = {placeholder, autofocus}
+    const sharedProps = { placeholder, autofocus }
 
-    return disabled ? <DisabledInput {...sharedProps} /> : <Input {...sharedProps} />
+    return disabled ? (<DisabledInput {...sharedProps} placeholderTextColor={theme.colors.typography.textDisabled} />) : (<Input {...sharedProps} placeholderTextColor={theme.colors.typography.common} />)
 
 }
